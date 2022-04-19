@@ -64,6 +64,8 @@
 let reg = /\w{8,15}/ig;
 
 let email = /^[\w]{3,8}\.?\@\.[a-z]{2,5}$/
+let eat;
+
  
   
 
