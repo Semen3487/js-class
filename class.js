@@ -1,4 +1,4 @@
-class animals {
+class Animals {
 
   //* static method
   static isAnimals(obj){
@@ -37,14 +37,14 @@ class animals {
   // }
 }
 
-class mammals extends animals{
+class Mammals extends Animals{
 
   static isMammals(obj){
     return obj instanceof this;
   }
 }
 
-class birds extends animals{
+class Birds extends Animals{
 
   static isBirds(obj){
     return obj instanceof this;
@@ -57,13 +57,13 @@ class birds extends animals{
     console.log('I can crya');
   }
 }
-const goose = new birds(2, 'Mikola', 5, 4);
-const duck = new birds(3, 'Vasil', 4, 4);
+const goose = new Birds(2, 'Mikola', 5, 4);
+const duck = new Birds(3, 'Vasil', 4, 4);
 console.log(goose);
 duck.say();
-console.log(mammals.isMammals(duck));
+console.log(Mammals.isMammals(duck));
 
-class fish extends animals{
+class Fish extends Animals{
 
   static isFish(obj){
     return obj instanceof this;
@@ -76,49 +76,50 @@ class fish extends animals{
     console.log('I can not say');
   }
 }
-const guppies = new fish(1, 'Dora', 0.001, 5);
-const tuna = new fish(15, 'Marlin', 200, 5);
+const guppies = new Fish(1, 'Dora', 0.001, 5);
+const tuna = new Fish(15, 'Marlin', 200, 5);
 guppies.move();
 
-class predators extends mammals{
+class Predators extends Mammals{
   move(){
     console.log('I can run');
   }
 }
 
-class whales extends mammals{}
+class Whales extends Mammals{}
 
-class primates extends mammals{}
+class Primates extends Mammals{}
 
-class dogs extends predators{
+class Dogs extends Predators{
 
-  constructor(name, color){
+  constructor(age, name, weight, limbAmount, color){
     //* super - наслідування параметрів полів конструктора або методів від батьківського класу(коли однакова назва параметру).
-    super(name);
-    this.name = name;
+    super(age, name, weight, limbAmount);
+    // this.name = name;
     this.color = color;
   }
   say(){
     console.log('I can gav');
   }
 }
-const taksa = new dogs(3, 'Dobby', 8, 4);
-const labrador = new dogs(8, 'Dilmah', 30, 4);
+const taksa = new Dogs(3, 'Dobby', 8, 4, 'brown');
+const labrador = new Dogs(8, 'Dilmah', 30, 4, 'yellow');
 taksa.eat();
+console.log(taksa);
 
-class dolphin extends whales{
+class Dolphin extends Whales{
   say(){
     console.log('I can sing');
   }
 }
 
-class human extends primates{
+class Human extends Primates{
   move(){
     console.log('I can go');
   }
 }
-const man = new human(33, 'John', 80, 4);
-const woman = new human(25, 'Mila', 55, 4);
+const man = new Human(33, 'John', 80, 4);
+const woman = new Human(25, 'Mila', 55, 4);
 
 
 
